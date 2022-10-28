@@ -7,10 +7,6 @@ const server = http.createServer((request, response) => {
     let contentType = getContentType(filepath) || 'text/html'
     fs.readFile(filepath, 'utf8', (err, data)=>{
         if(err) {
-            // if(err.code === 'ENOENT'){
-            //     response.writeHead(200, {'contentType': contentType})
-
-            // }
             console.log(err)
         }
         response.writeHead(200, {'Content-Type': contentType})
