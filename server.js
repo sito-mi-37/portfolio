@@ -3,7 +3,7 @@ const path = require('path')
 const http = require('http')
 
 const server = http.createServer((request, response) => {
-    let filepath = path.join(__dirname,'public', request.url === '/home' ? 'home.html' : request.url)
+    let filepath = path.join(__dirname,'public', request.url === '/home' ? 'index.html' : request.url)
     let contentType = getContentType(filepath) || 'text/html'
     fs.readFile(filepath, 'utf8', (err, data)=>{
         if(err) {
